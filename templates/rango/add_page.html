@@ -1,3 +1,4 @@
+{% if category.slug %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,3 +23,6 @@
 		</div>
     </body>
 </html>
+{% else %} 
+A category by this name does not exist.
+{% endif %}

@@ -1,6 +1,9 @@
 from __future__ import unicode_literals
 from django.template.defaultfilters import slugify
 from django.db import models
+from datetime import datetime
+
+now=datetime.now
 
 # Create your models here.
 class Category(models.Model):
@@ -25,6 +28,8 @@ class Page(models.Model):
     title = models.CharField(max_length=128)
     url = models.URLField()
     views = models.IntegerField(default=0)
+    first_visit = models.DateTimeField(null=True, blank = True)
+    last_visit = models.DateTimeField(null=True, blank = True)
 
     def __str__(self):  # For Python 2, use __unicode__ too
         return self.title
