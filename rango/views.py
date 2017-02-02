@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render
 # Import the Category model
 from rango.models import Category, Page
 from rango.forms import CategoryForm, PageForm, UserForm, UserProfileForm
@@ -144,4 +144,4 @@ def register(request):
         user_form = UserForm()
         profile_form = UserProfileForm()
         # Render the template depending on the context.
-    return render_to_response('rango/register.html', {'user_form':user_form, 'profile_form':profile_form, 'registered':registered}, context)
+    return render(request, 'rango/register.html', {'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
