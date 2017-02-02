@@ -32,15 +32,19 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'rango',
-]
+INSTALLED_APPS = (
+'django.contrib.auth', # THIS LINE SHOULD BE PRESENT AND UNCOMMENTED
+'django.contrib.contenttypes', # THIS LINE SHOULD BE PRESENT AND UNCOMMENTED
+'django.contrib.sessions',
+'django.contrib.sites',
+'django.contrib.messages',
+'django.contrib.staticfiles',
+# Uncomment the next line to enable the admin:
+'django.contrib.admin',
+# Uncomment the next line to enable admin documentation:
+# 'django.contrib.admindocs',
+'rango',
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
