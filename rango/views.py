@@ -101,8 +101,6 @@ def add_page(request, category_name_slug):
     return render(request, 'rango/add_page.html', context_dict)
     
 def register(request):
-    # Like before, get the request's context.
-    context = RequestContext(request)
     # A boolean value for telling the template whether the registration was successful.
     # Set to False initially. Code changes value to True when registration succeeds.
     registered = False
@@ -130,14 +128,14 @@ def register(request):
             if('picture' in request.FILES):
                 profile.picture = request.FILES['picture']
                 # Now we save the UserProfile model instance.
-                profile.save()
-                # Update our variable to tell the template registration was successful.
+            profile.save()
+            # Update our variable to tell the template registration was successful.
             registered = True
             # Invalid form or forms - mistakes or something else?
             # Print problems to the terminal.
             # They'll also be shown to the user.
         else:
-            print user_form.errors, profile_form.errors
+            print(user_form.errors, profile_form.errors)
     # Not a HTTP POST, so we render our form using two ModelForm instances.              
     # These forms will be blank, ready for user input.
     else:
