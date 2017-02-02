@@ -6,10 +6,11 @@ Rango
 {% endblock %}
 {% block body_block %}
         <a href="{% url 'register' %}">Register Here</a>
-        <h1>Rango says...</h1>
-        <div>
-            hey there partner!
-        </div>
+            {% if user.is_authenticated %}
+                <h1>Rango says... hello {{ user.username }}!</h1>
+            {% else %}
+                <h1>Rango says... hey there partner!</h1>
+            {% endif %}
 		<a href="{% url 'add_category' %}">Add a New Category</a><br/>
         <h3>Most Liked Categories</h3>
         <div>
