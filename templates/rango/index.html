@@ -5,6 +5,7 @@
 Rango
 {% endblock %}
 {% block body_block %}
+    <div>The number of visits is {{ visits }}</div>
     <ul>
         {% if user.is_authenticated %}
               <li><a href="{% url 'restricted' %}">Restricted Page</a></li>
