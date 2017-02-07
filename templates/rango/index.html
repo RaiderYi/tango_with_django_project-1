@@ -42,10 +42,10 @@ Rango
     {% endif %}
     </div>
     <h3>Most Viewed Pages</h3>
-    {% if page %}
+    {% if pages %}
         <ul>
-		    {% for pages in page %}
-		    	<li><a href="{{ pages.url}}">{{ pages.title }}</a></li>
+		    {% for page in pages %}
+		    	<li><a href="{{ page.url}}">{{ page.title }}</a></li>
 		    {% endfor %}
     	</ul>
     {% else %}
